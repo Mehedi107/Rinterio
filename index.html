@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,8 +37,8 @@
   </head>
   <body class="bg-[#f8f9fa] font-manrope text-secondary">
     <!-- Navigation -->
-    <nav class="container mx-auto py-5">
-      <div class="navbar">
+    <nav id="nav" class="container mx-auto px-5 md:py-5">
+      <div class="navbar px-0">
         <!-- Logo -->
         <div class="navbar-start">
           <a
@@ -63,13 +63,13 @@
           </a>
         </div>
         <!-- Menu -->
-        <div class="navbar-center hidden xl:block">
+        <div class="navbar-center hidden xl:flex">
           <ul class="menu menu-horizontal px-1 text-base md:text-lg">
-            <li><a href="#" class="font-extrabold">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#nav" class="font-extrabold">Home</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blogs</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
         <!-- Search bar -->
@@ -128,23 +128,58 @@
             </span>
           </button>
 
-          <button
-            class="xl:hidden bg-white rounded-full btn btn-square btn-ghost"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="inline-block h-5 w-5 stroke-current"
+          <details class="dropdown lg:hidden">
+            <summary class="bg-white rounded-full btn btn-square btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block h-5 w-5 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </summary>
+            <ul
+              class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow right-0 gap-3"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </details>
+
+          <!-- <details class="dropdown xl:hidden">
+            <summary class="bg-white rounded-full btn btn-square btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block h-5 w-5 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </summary>
+
+            <ul class="menu menu-horizontal px-1 text-base md:text-lg">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </details> -->
         </div>
       </div>
     </nav>
@@ -153,7 +188,7 @@
     <main>
       <!-- Section banner -->
       <section
-        class="container mx-auto flex flex-col justify-start items-center text-center mb-20"
+        class="container mx-auto flex flex-col justify-start items-center text-center mb-20 px-5"
       >
         <img src="assets/banner.png" alt="house image" />
         <h1
@@ -190,9 +225,9 @@
       </section>
 
       <!-- Section About us-->
-      <section id="about" class="bg-[#e9ecef] py-28 relative">
+      <section id="about" class="bg-[#e9ecef] py-28 relative px-5">
         <img
-          class="hidden lg:inline-block border border-gray-400 border-dashed py-5 absolute left-10 top-7"
+          class="hidden lg:inline-block py-5 absolute left-10 top-7"
           src="assets/Vector.png"
           alt=""
         />
@@ -354,7 +389,7 @@
       </section>
 
       <!-- Section Service-->
-      <section class="bg-[#e9ecef]">
+      <section id="service" class="bg-[#e9ecef]">
         <div class="container mx-auto pb-28 px-5">
           <div class="text-center">
             <div class="text-center">
@@ -489,7 +524,7 @@
         <!-- Grid layout -->
         <div class="grid grid-cols-12 gap-7">
           <div
-            class="p-8 bg-white rounded-3xl col-span-full lg:col-span-8 flex flex-col md:flex-row items-center gap-8 border-gray-200 border order-1"
+            class="p-5 md:p-8 bg-white rounded-3xl col-span-full lg:col-span-8 flex flex-col md:flex-row items-center gap-8 border-gray-200 border order-1"
           >
             <img class="w-full object-cover" src="assets/img1.png" alt="" />
             <div class="text-left">
@@ -523,13 +558,13 @@
           </div>
 
           <div
-            class="p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-4 border-gray-200 border order-2"
+            class="p-5 md:p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-4 border-gray-200 border order-2"
           >
             <img class="w-full h-full" src="assets/img2.png" alt="" />
           </div>
 
           <div
-            class="p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-3 border-gray-200 border order-4"
+            class="p-5 md:p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-3 border-gray-200 border order-4"
           >
             <img
               class="w-full h-full object-cover rounded-2xl"
@@ -539,7 +574,7 @@
           </div>
 
           <div
-            class="p-8 bg-white rounded-3xl col-span-full lg:col-span-6 flex flex-col md:flex-row items-center gap-8 border-gray-200 border order-5"
+            class="p-5 md:p-8 bg-white rounded-3xl col-span-full lg:col-span-6 flex flex-col md:flex-row items-center gap-8 border-gray-200 border order-5"
           >
             <img class="h-full md:w-auto w-full" src="assets/img4.png" alt="" />
             <div class="text-left">
@@ -573,7 +608,7 @@
           </div>
 
           <div
-            class="p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-3 border-gray-200 border order-6"
+            class="p-5 md:p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-3 border-gray-200 border order-6"
           >
             <img
               class="w-full h-full object-cover"
@@ -583,7 +618,7 @@
           </div>
 
           <div
-            class="p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-3 border-gray-200 border order-3 lg:hidden"
+            class="p-5 md:p-8 bg-white rounded-3xl col-span-full md:col-span-6 lg:col-span-3 border-gray-200 border order-3 lg:hidden"
           >
             <img
               class="w-full h-full object-cover"
@@ -638,7 +673,7 @@
           <!-- card grid -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-7">
             <div
-              class="p-8 bg-white rounded-3xl border-gray-200 border flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-0"
+              class="p-5 md:p-8 bg-white rounded-3xl border-gray-200 border flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-0"
             >
               <img class="w-full" src="assets/article1.png" alt="" />
               <div>
@@ -709,7 +744,7 @@
             </div>
 
             <div
-              class="p-8 bg-white rounded-3xl border-gray-200 border flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-0"
+              class="p-5 md:p-8 bg-white rounded-3xl border-gray-200 border flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-0"
             >
               <img class="w-full" src="assets/article2.png" alt="" />
               <div>
@@ -780,7 +815,7 @@
             </div>
 
             <div
-              class="p-8 bg-white rounded-3xl border-gray-200 border flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-0"
+              class="p-5 md:p-8 bg-white rounded-3xl border-gray-200 border flex flex-col md:flex-row lg:flex-col gap-8 lg:gap-0"
             >
               <img class="w-full" src="assets/article3.png" alt="" />
               <div>
@@ -853,6 +888,96 @@
         </div>
       </section>
 
+      <!-- Section testimonial -->
+      <section class="py-28 px-5 container mx-auto">
+        <div class="text-center">
+          <div class="text-center">
+            <div class="py-3 px-6 rounded-full inline-block bg-white">
+              <div class="flex gap-1 items-center">
+                <span class="text-black p-2 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="size-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </span>
+                <span class="text-base md:text-lg font-semibold">Reviews</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2
+          class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-10 mb-16 text-center"
+        >
+          Our testimonials
+        </h2>
+
+        <div class="grid grid-col-1 xl:grid-cols-3 gap-8">
+          <div class="p-5 md:p-8 rounded-3xl border border-gray-400">
+            <p class="text-xl md:text-2xl mb-8 leading-relaxed">
+              "We were thrilled with the results from Renterio! Their
+              professionalism and creativity turned our outdated space into a
+              modern haven, and we received numerous compliments from friends
+              and family."
+            </p>
+            <div class="flex gap-8">
+              <img class="w-14" src="assets/ava4.png" alt="" />
+              <div>
+                <h4 class="text-xl lg:text-2xl font-extrabold text-left">
+                  John Travis
+                </h4>
+                <p class="text-base md:text-lg text-gray-500">Designer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 md:p-8 rounded-3xl border border-gray-400">
+            <p class="text-xl md:text-2xl mb-8 leading-relaxed">
+              "Renterio transformed our rental property into a stylish and
+              inviting space that attracted tenants immediately. Their attention
+              to detail and understanding of our needs made the entire process
+              seamless and enjoyable."
+            </p>
+            <div class="flex gap-8">
+              <img class="w-14" src="assets/y9.png" alt="" />
+              <div>
+                <h4 class="text-xl lg:text-2xl font-extrabold text-left">
+                  John Travis
+                </h4>
+                <p class="text-base md:text-lg text-gray-500">Designer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 md:p-8 rounded-3xl border border-gray-400">
+            <p class="text-xl md:text-2xl mb-8 leading-relaxed">
+              "The team at Renterio was exceptional in bringing our vision to
+              life. They provided innovative design solutions that not only
+              enhanced the aesthetics but also improved functionality, making
+              our home a true masterpiece."
+            </p>
+            <div class="flex gap-8">
+              <img class="w-14" src="assets/ava2.png" alt="" />
+              <div>
+                <h4 class="text-xl lg:text-2xl font-extrabold text-left">
+                  John Travis
+                </h4>
+                <p class="text-base md:text-lg text-gray-500">Designer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Section contact -->
       <section
         id="contact"
@@ -902,7 +1027,7 @@
             sophistication, featuring weathered wood, sleek metal accents.
           </p>
 
-          <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <form class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             <input
               type="text"
               placeholder="First Name*"
@@ -993,15 +1118,16 @@
       </p>
       <div>
         <ul
-          class="menu menu-horizontal text-base md:text-lg gap-5 text-[#737373]"
+          class="menu flex flex-col items-center md:flex-row md:justify-center text-base md:text-lg gap-5 text-[#737373]"
         >
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Contact Us</a></li>
+          <li><a href="#nav">Home</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blogs</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
+
       <button
         class="mt-10 border-primary btn bg-primary btn-lg font-extrabold rounded-full"
       >
